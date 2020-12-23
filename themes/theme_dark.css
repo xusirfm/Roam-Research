@@ -19,6 +19,10 @@ body, html, div, textarea, a {
   font-weight: 300
 }
 
+img.rm-inline-img{
+  max-width: 200px !important;
+}
+
 /* 文字选中 */
 
 ::selection {
@@ -27,8 +31,23 @@ body, html, div, textarea, a {
   padding: 5px 0;
 }
 
-a,a:hover {
+a {
+  padding-bottom: 3px;
+  color: #d4d4d4;
+  text-decoration: none;
+  border-bottom: 1px dashed #666;
+}
+
+a:hover {
   color: #569CCA;
+  text-decoration: none;
+  border-color: #569CCA;
+}
+
+/* 引用 */
+.rm-bq{
+   background: #252526;
+   padding: 5px 10px;
 }
 
 /* 菜单:右键|搜索结果|顶部...| ,All page 是否显示列 */
@@ -40,8 +59,8 @@ a,a:hover {
   border-radius: 0;
 }
 
-.bp3-text-overflow-ellipsis,.rm-menu-item .rm-search-title{
-  color:#a3a4a3
+.bp3-text-overflow-ellipsis, .rm-menu-item .rm-search-title {
+  color: #a3a4a3
 }
 
 .bp3-menu {
@@ -125,17 +144,42 @@ a,a:hover {
   color: #cedee9;
 }
 
-/* roam-center */
-.roam-center,.roam-center .roam-block-container,.rm-block-text{
-  width:100%;
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper {
+  padding: 0 !important
+}
+
+.roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page {
+  font-size: 14px !important;
+  padding: 8px 20px !important;
+  color: #d4d4d4 !important;
+}
+
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button:hover, .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page:hover {
+  background: #2A2D2E !important
+}
+
+/* roam-body-main */
+
+.roam-body-main, .roam-body-main .roam-block-container, .rm-block-text {
+  width: 100%;
   max-width: 1000px !important;
-  margin:0 auto
+  margin: 0 auto
 }
 
 /* 内容块 */
+
 .roam-block, .rm-block-input {
   padding-top: 2px;
   line-height: 1.6;
+}
+
+.roam-block b, .roam-block strong {
+  font-weight: bold;
+  color: #d6d6d3;
+}
+
+.rm-embed-container {
+  background: #252526;
 }
 
 /* Right sidebar */
@@ -145,7 +189,7 @@ a,a:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, .28);
 }
 
-.bp3-button, .bp3-button:hover {
+.rm-ref-page-view-title a, .bp3-button, .bp3-button:hover, #right-sidebar .level2 a {
   color: #1abc9c !important
 }
 
@@ -174,11 +218,9 @@ a,a:hover {
 
 .rm-page-ref-link-color {
   color: #1abc9c;
-  font-weight: 600;
 }
 
 /* Reference block heading */
-
 
 /* All pages */
 
@@ -257,6 +299,10 @@ a,a:hover {
   background: none;
 }
 
+.rm-zoom-path .rm-zoom-item {
+  color: #d4d4d4
+}
+
 /* 左侧圆点 */
 
 .controls .simple-bullet-outer:hover {
@@ -274,12 +320,11 @@ a,a:hover {
   background: #2A2D2E;
 }
 
-
 /* Code */
 
 .CodeMirror {
   max-height: 300px;
-  background: #dfd8ba;
+  background: #d1c8af;
 }
 
 .CodeMirror .CodeMirror-gutters {
@@ -289,17 +334,23 @@ a,a:hover {
 }
 
 .CodeMirror .CodeMirror-code .CodeMirror-line {
+  padding-left: 10px;
   color: #333
+}
+
+.cm-s-default .cm-comment {
+  color: #6b6a6a;
 }
 
 .simple-bullet-inner {
   opacity: 0.8;
 }
 
-code{
-  margin:0 3px;
+code {
+  margin: 0 3px;
   color: #ffb001;
   background: #262933;
+  border: none
 }
 
 /* Checkmarks */
@@ -319,25 +370,24 @@ code{
 /* Hashtags */
 
 .rm-page-ref-tag {
-  color: #355c7d6b !important;
   font-weight: 400;
-  background-color: #355c7d17;
   border-radius: 10px;
   padding: 1px 5px 2px;
+  color: #1abc8d;
 }
 
 .rm-page-ref-tag:hover {
-  background-color: #f672803b;
-  text-decoration: none;
+  opacity: .9;
 }
 
-/* Highlighting */
+/* em */
 
-.roam-highlight {
-  background-color: #f8b19582;
-  color: #424242;
+em {
+  color: #a8a8a8;
   border-radius: 0px;
   padding: 5px 5px 4px 5px;
+  font-size: 15px;
+  font-style: normal
 }
 
 /* Search box border */
@@ -366,7 +416,7 @@ code{
   padding: 4px;
   margin: 0;
   border-bottom: none;
-  color: #355C7D;
+  color: #1abc9c;
 }
 
 /* Align check-boxes better */
@@ -379,4 +429,27 @@ label.check-container {
 .rm-level1 label.check-container {
   margin-bottom: 17px;
   margin-right: -3px;
+}
+
+/* query **********/
+
+.rm-query {
+  border: none
+}
+
+.rm-query .rm-query-title {
+  padding: 0;
+  background: none;
+  color: #6A9955
+}
+
+/* help */
+
+#buffer {
+  z-index: 10000;
+  font-size: 14px;
+}
+
+#buffer .help-item-title {
+  font-size: 12px;
 }
