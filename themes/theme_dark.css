@@ -48,6 +48,7 @@ a:hover {
 .rm-bq{
    background: #252526;
    padding: 5px 10px;
+   border-left-width:3px;
 }
 
 /* 菜单:右键|搜索结果|顶部...| ,All page 是否显示列 */
