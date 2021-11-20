@@ -36,7 +36,7 @@ a {
   color: #d4d4d4;
   text-decoration: none;
   border-bottom: 1px dashed #666;
-}
+  }
 
 a:hover {
   color: #569CCA;
@@ -48,7 +48,6 @@ a:hover {
 .rm-bq{
    background: #252526;
    padding: 5px 10px;
-   border-left-width:3px;
 }
 
 /* 菜单:右键|搜索结果|顶部...| ,All page 是否显示列 */
@@ -157,6 +156,10 @@ a:hover {
 
 .roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button:hover, .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page:hover {
   background: #2A2D2E !important
+}
+
+.roam-body .roam-app .roam-sidebar-container .rm-graph-dropdown .menu-item{
+  color:#fff
 }
 
 /* roam-body-main */
@@ -324,7 +327,6 @@ a:hover {
 /* Code */
 
 .CodeMirror {
-  max-height: 300px;
   background: #d1c8af;
 }
 
@@ -337,6 +339,10 @@ a:hover {
 .CodeMirror .CodeMirror-code .CodeMirror-line {
   padding-left: 10px;
   color: #333
+}
+
+.CodeMirror .CodeMirror-scroll{
+  max-height:300px !important
 }
 
 .cm-s-default .cm-comment {
@@ -453,4 +459,9 @@ label.check-container {
 
 #buffer .help-item-title {
   font-size: 12px;
+}
+
+/* youtube 视频预览 **********/
+.rm-video-player__spacing-wrapper{
+  width:280px
 }
